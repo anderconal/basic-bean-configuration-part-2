@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
+		<property name="masPoderoso" ref="pikachu"></property>
+		<property name="pokemon">
+			<list>
+				<ref bean="charmander" />
+				<ref bean="squirtle" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="pikachu" class="es.anderconal.modelo.Pokemon">
+		<property name="nombre" value="Pikachu"></property>
+		<property name="tipo" value="Eléctrico"></property>
+	</bean>
+
+	<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
+		<property name="nombre" value="Squirtle"></property>
+		<property name="tipo" value="Agua"></property>
+	</bean>
+
+	<bean id="charmander" class="es.anderconal.modelo.Pokemon">
+		<property name="nombre" value="Charmander"></property>
+		<property name="tipo" value="Fuego"></property>
+	</bean>
+</beans>
