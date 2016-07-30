@@ -1,4 +1,4 @@
-# from-16-to-19
+# basic-bean-configuration-part-2
 Working with lists of beans, inner beans, property maps and arbitrary maps as bean properties
 
 I´ve used:
