@@ -5,20 +5,24 @@
 
 
 	<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
-		<property name="masPoderoso" ref="pikachu"></property>
+		<property name="masPoderoso">
+		<!-- Inner bean, it doesn´t need a ref tag neither an id  -->
+			<bean class="es.anderconal.modelo.Pokemon">
+				<property name="nombre" value="Pikachu"></property>
+				<property name="tipo" value="Eléctrico"></property>
+			</bean>
+		</property>
+		
 		<property name="pokemon">
 			<list>
+				<!-- Bean reference -->
 				<ref bean="charmander" />
 				<ref bean="squirtle" />
 			</list>
 		</property>
 	</bean>
-
-	<bean id="pikachu" class="es.anderconal.modelo.Pokemon">
-		<property name="nombre" value="Pikachu"></property>
-		<property name="tipo" value="Eléctrico"></property>
-	</bean>
-
+	
+	<!-- Referenced beans -->
 	<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
 		<property name="nombre" value="Squirtle"></property>
 		<property name="tipo" value="Agua"></property>
