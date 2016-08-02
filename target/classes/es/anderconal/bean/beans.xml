@@ -3,23 +3,23 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-		<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
+	<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
+		<property name="tipos">
+			<props>
+				<prop key="pikachu">Electricidad</prop>
+				<prop key="squirtle">Agua</prop>
+				<prop key="charmander">Fuego</prop>
+			</props>
+		</property>
+		
+		<property name="pokemon">
+			<map>
+				<entry key="squirtle" value-ref="squirtle"></entry>
+			</map>
+		</property>
+	</bean>
 
-			<property name="tipos">
-				<props>
-					<prop key="pikachu">Electricidad</prop>
-					<prop key="squirtle">Agua</prop>
-					<prop key="charmander">Fuego</prop>
-				</props>
-			</property>
-			<property name="pokemon">
-				<map>
-					<entry key="squirtle" value-ref="squirtle"></entry>
-				</map>
-			</property>
-		</bean>
-
-		<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
+	<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
 		<property name="nombre" value="Squirtle"></property>
 		<property name="tipo" value="Agua"></property>
 	</bean>
