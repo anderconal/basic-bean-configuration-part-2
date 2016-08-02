@@ -1,36 +1,23 @@
 package es.anderconal.modelo;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Pokedex {
-	private Pokemon masPoderoso;
-	private List<Pokemon> pokemon;
-	
-	public Pokemon getMasPoderoso() {
-		return masPoderoso;
+	private Map<String, String> tipos = new HashMap<String, String>();
+
+	public void setTipos(Map<String, String> tipos) {
+		this.tipos = tipos;
 	}
-	public void setMasPoderoso(Pokemon masPoderoso) {
-		this.masPoderoso = masPoderoso;
-	}
-	public List<Pokemon> getPokemon() {
-		return pokemon;
-	}
-	public void setPokemon(List<Pokemon> pokemon) {
-		this.pokemon = pokemon;
-	}
-	
+
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
-		sb.append("El Pokémon más poderoso es: " + masPoderoso + "\n");
-		sb.append("Otros Pokémon: \n");
-		
-		for (Pokemon pokemon : pokemon) {
-			sb.append(pokemon);
-			sb.append("\n");
+		for (Map.Entry<String, String> entrada : tipos.entrySet()) {
+			sb.append(entrada.getKey() + ": " + entrada.getValue() + "\n");
 		}
-		
 		return sb.toString();
 	}
 }

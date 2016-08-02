@@ -3,26 +3,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+		<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
 
-	<bean id="pokedex" class="es.anderconal.modelo.Pokedex">
-		<property name="masPoderoso">
-		<!-- Inner bean, it doesn´t need a ref tag neither an id  -->
-			<bean class="es.anderconal.modelo.Pokemon">
-				<property name="nombre" value="Pikachu"></property>
-				<property name="tipo" value="Eléctrico"></property>
-			</bean>
-		</property>
-		
-		<property name="pokemon">
-			<list>
-				<!-- Bean reference -->
-				<ref bean="charmander" />
-				<ref bean="squirtle" />
-			</list>
-		</property>
-	</bean>
-	
-	<!-- Referenced beans -->
+			<property name="tipos">
+				<props>
+					<prop key="pikachu">Electricidad</prop>
+					<prop key="squirtle">Agua</prop>
+					<prop key="charmander">Fuego</prop>
+				</props>
+			</property>
+		</bean>
+
+		<!-- Referenced beans -->
 	<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
 		<property name="nombre" value="Squirtle"></property>
 		<property name="tipo" value="Agua"></property>
