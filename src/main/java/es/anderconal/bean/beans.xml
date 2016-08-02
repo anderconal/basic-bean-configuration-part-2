@@ -12,10 +12,14 @@
 					<prop key="charmander">Fuego</prop>
 				</props>
 			</property>
+			<property name="pokemon">
+				<map>
+					<entry key="squirtle" value-ref="squirtle"></entry>
+				</map>
+			</property>
 		</bean>
 
-		<!-- Referenced beans -->
-	<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
+		<bean id="squirtle" class="es.anderconal.modelo.Pokemon">
 		<property name="nombre" value="Squirtle"></property>
 		<property name="tipo" value="Agua"></property>
 	</bean>
